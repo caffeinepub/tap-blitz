@@ -1,0 +1,127 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "Tap Blitz - Mobile Tap Game Frontend Implementation",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "summary": "Create a tap-based mobile game with appearing targets, scoring, 30-second timer, and game-over screen",
+      "acceptanceCriteria": [
+        "Targets (circles or similar shapes) appear at random positions on screen",
+        "Targets shrink and disappear if not tapped within ~2 seconds",
+        "Tapping a target increases the score by 1",
+        "A visible countdown timer starts at 30 seconds",
+        "When the timer reaches 0, a game-over screen displays the final score",
+        "A restart button resets the score, timer, and game state",
+        "Layout is optimized for mobile screen sizes (touch-friendly, portrait orientation)"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/hooks/useGameState.ts",
+          "operation": "create",
+          "description": "Create a custom React hook to manage game state including score, timer countdown (30 seconds), active targets array, game status (playing/gameover), and game loop logic. Handle target spawning at random positions, target lifecycle (shrinking/removal after ~2 seconds), tap detection, score increment, and timer decrement."
+        },
+        {
+          "path": "frontend/src/components/GameCanvas.tsx",
+          "operation": "create",
+          "description": "Create the main game canvas component that renders the play area, active targets at their positions, score display, and countdown timer. Handle touch/click events on targets to trigger scoring. Display targets as circles with shrink animations."
+        },
+        {
+          "path": "frontend/src/components/Target.tsx",
+          "operation": "create",
+          "description": "Create a Target component that renders an individual tap target (circle) at given x/y coordinates. Include CSS animation for shrinking effect over ~2 seconds and removal callback when animation completes or target is tapped."
+        },
+        {
+          "path": "frontend/src/components/GameOverScreen.tsx",
+          "operation": "create",
+          "description": "Create a game-over screen component that displays the final score prominently and includes a restart button. Accept onRestart callback prop to reset game state when clicked."
+        },
+        {
+          "path": "frontend/src/pages/Game.tsx",
+          "operation": "create",
+          "description": "Create the main Game page component that orchestrates the game flow using useGameState hook. Conditionally render GameCanvas during play and GameOverScreen when timer reaches zero. Handle restart logic to reset all game state."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Wire the Game page component into the app routing. Replace or update existing routes to make the Game page the default route rendered at '/'."
+        }
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "summary": "Display and persist high score using backend storage, showing it on game HUD and game-over screen",
+      "acceptanceCriteria": [
+        "Backend actor exposes a query to get the high score and an update to set a new high score",
+        "High score is persisted across page refreshes",
+        "High score is shown on the game HUD and on the game-over screen",
+        "High score updates automatically if the player beats it"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/hooks/useHighScore.ts",
+          "operation": "create",
+          "description": "Create a custom hook to fetch the high score from the backend using getHighScore() on mount and provide a function to submit a new score via submitScore(finalScore). Cache the high score in state and update it when a new high score is set."
+        },
+        {
+          "path": "frontend/src/components/GameCanvas.tsx",
+          "operation": "modify",
+          "description": "Add high score display to the game HUD alongside the current score and timer. Accept highScore as a prop and render it prominently."
+        },
+        {
+          "path": "frontend/src/components/GameOverScreen.tsx",
+          "operation": "modify",
+          "description": "Display the high score on the game-over screen alongside the final score. Accept highScore prop and render it clearly."
+        },
+        {
+          "path": "frontend/src/pages/Game.tsx",
+          "operation": "modify",
+          "description": "Integrate useHighScore hook to fetch and display the high score. When the game ends, compare final score with high score; if final score is higher, call submitScore to update backend. Pass high score down to GameCanvas and GameOverScreen components as props."
+        }
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "summary": "Apply vibrant arcade-style visual theme with neon colors, dark background, smooth animations, and mobile-optimized typography",
+      "acceptanceCriteria": [
+        "Dark background with neon accent colors used consistently throughout",
+        "Score and timer are prominently displayed and easy to read",
+        "Targets have smooth scale-down animations before disappearing",
+        "Tap feedback (e.g., burst or color flash) is visible on successful taps",
+        "UI looks clean and usable on screens 375px–430px wide"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/index.css",
+          "operation": "modify",
+          "description": "Define arcade-style theme with dark background (e.g., #0a0a0a or #111) and neon accent colors (magenta, cyan, yellow). Set global body background to dark. Add CSS custom properties for neon colors and apply smooth transitions for interactive elements."
+        },
+        {
+          "path": "frontend/tailwind.config.js",
+          "operation": "modify",
+          "description": "Extend Tailwind theme with neon color palette (magenta, cyan, yellow) and ensure default dark background is configured. Add responsive breakpoints optimized for mobile screens (375px–430px)."
+        },
+        {
+          "path": "frontend/src/components/Target.tsx",
+          "operation": "modify",
+          "description": "Style Target component with bold neon colors and smooth CSS scale-down animation over ~2 seconds using keyframes. Apply glow or shadow effects for arcade feel. Ensure targets are large and touch-friendly (minimum 60px diameter)."
+        },
+        {
+          "path": "frontend/src/components/GameCanvas.tsx",
+          "operation": "modify",
+          "description": "Apply dark background to the game canvas area. Style score and timer with large, bold typography using neon accent colors. Add tap feedback animation (color flash or burst effect) on successful target tap. Ensure layout is mobile-optimized and portrait-friendly."
+        },
+        {
+          "path": "frontend/src/components/GameOverScreen.tsx",
+          "operation": "modify",
+          "description": "Style the game-over screen with dark background and neon typography for final score and high score displays. Style the restart button with neon border/glow effect and smooth hover/active states. Ensure mobile-friendly touch target size."
+        },
+        {
+          "path": "frontend/public/assets/generated/game-bg.dim_390x844.png",
+          "operation": "create",
+          "description": "Wire the generated starburst background image (workspace file path: frontend/public/assets/generated/game-bg.dim_390x844.png) into the game UI. Reference this exact generated image file as a background layer in the Game page or GameCanvas component to provide the vibrant neon glow splash screen background."
+        }
+      ]
+    }
+  ]
+}

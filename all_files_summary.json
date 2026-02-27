@@ -1,0 +1,21 @@
+{
+  "backend/main.mo": "Motoko actor that stores a single global high score, exposing `submitScore` to update it if beaten and `getHighScore` to retrieve it.",
+  "feature_evidence.json": "Feature evidence report mapping three game features (tap gameplay, high score backend, arcade visual theme) to their implementing source files and test IDs.",
+  "frontend-file-summaries.txt": "JSON document containing one-line summaries of each frontend source file for build planning reference.",
+  "frontend/index.css": "Tailwind base stylesheet defining CSS custom properties for light and dark theme color tokens used throughout the app.",
+  "frontend/index.html": "HTML entry point for the Tap Blitz app, mounting the React root and loading the main TypeScript module.",
+  "frontend/src/App.tsx": "Root React component that renders the single GamePage as the entire application.",
+  "frontend/src/components/GameCanvas.tsx": "Main gameplay area component rendering the HUD (score, timer, high score), tap targets, tap-feedback burst animations, and a background grid overlay.",
+  "frontend/src/components/GameOverScreen.tsx": "Game over screen showing the final score, all-time high score, an optional new-high-score trophy badge, and a neon-styled Play Again button.",
+  "frontend/src/components/StartScreen.tsx": "Splash screen displaying the Tap Blitz logo, current high score, an animated start button, and a how-to-play instructions card.",
+  "frontend/src/components/Target.tsx": "Individual tap target rendered as a neon glowing circle that visually shrinks over its lifetime and plays a burst animation on tap before calling the onTap callback.",
+  "frontend/src/hooks/useActor.ts": "React Query hook that creates and caches an authenticated or anonymous ICP backend actor, invalidating dependent queries whenever the identity changes.",
+  "frontend/src/hooks/useGameState.ts": "Custom React hook managing core game logic including target spawning, countdown timer, expired target cleanup, score tracking, and game status transitions (idle/playing/gameover).",
+  "frontend/src/hooks/useInternetIdentity.ts": "Custom React hook and context provider for Internet Identity authentication, handling login, logout, identity persistence, and exposing auth status flags.",
+  "frontend/src/hooks/useQueries.ts": "React Query hooks for fetching the player's high score from the backend canister and submitting a new score via mutation, with cache invalidation on new high scores.",
+  "frontend/src/index.css": "Global CSS file defining the arcade dark theme with neon color variables, Tailwind base/component/utility layers, and custom component styles for game UI elements like buttons, targets, and the HUD bar.",
+  "frontend/src/main.tsx": "Application entry point that mounts the React app wrapped with QueryClientProvider and InternetIdentityProvider.",
+  "frontend/src/pages/Game.tsx": "Main game page component that orchestrates game state, score submission, and conditionally renders the StartScreen, GameCanvas, or GameOverScreen based on current game status.",
+  "frontend/tailwind.config.js": "Tailwind CSS configuration extending the theme with neon colors, Orbitron/Inter fonts, custom box shadows, arcade-themed keyframe animations, and oklch-based design token colors.",
+  "project_state.json": "Project metadata file tracking the current state, implemented features, architectural notes, and requirements for the Tap Blitz mobile game project."
+}

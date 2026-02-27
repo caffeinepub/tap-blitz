@@ -1,0 +1,40 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 3,
+  "summary": "Simple mobile game project.",
+  "architectural_notes": [],
+  "known_issues": [],
+  "isFixRequest": false,
+  "imageRequirements": "## Required Images\n- Colorful neon starburst or radial glow splash screen background illustration with dark background and vivid magenta, cyan, and yellow light rays (game-bg.dim_390x844.png)",
+  "existing_features": [
+    {
+      "id": "feature-create-a-simple-tap-click-based-mobile-game-where-the-player-taps-appearing-targets-on-screen-to-score-points-targets-should-appear-at-random-positions-shrink-over-time-and-disappear-if-not-tapped-each-successful-tap-increments-the-score-the-game-runs-for-30-seconds-after-which-a-game-over-screen-shows-the-final-score-and-a-restart-button",
+      "title": "Create a simple tap/click-based mobile game where the player taps appearing targets on screen to score points. Targets should appear at random positions, shrink over time, and disappear if not tapped. Each successful tap increments the score. The game runs for 30 seconds, after which a game-over screen shows the final score and a restart button.",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-store-and-display-the-player-s-all-time-high-score-on-the-backend-when-a-game-ends-if-the-final-score-exceeds-the-stored-high-score-update-it-display-the-current-high-score-on-both-the-main-game-screen-and-the-game-over-screen",
+      "title": "Store and display the player's all-time high score on the backend. When a game ends, if the final score exceeds the stored high score, update it. Display the current high score on both the main game screen and the game-over screen.",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-apply-a-vibrant-arcade-style-visual-theme-bold-neon-colors-on-a-dark-background-large-rounded-touch-targets-smooth-css-animations-for-target-appearance-and-shrinking-and-clear-score-timer-typography-the-design-must-feel-polished-and-playable-on-a-mobile-screen",
+      "title": "Apply a vibrant arcade-style visual theme: bold neon colors on a dark background, large rounded touch targets, smooth CSS animations for target appearance and shrinking, and clear score/timer typography. The design must feel polished and playable on a mobile screen.",
+      "reqIds": [
+        "REQ-3"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [],
+  "gameProjectType": "2d",
+  "projectName": "Tap Blitz",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0
+}

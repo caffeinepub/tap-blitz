@@ -1,0 +1,12 @@
+{
+  "frontend/src/App.tsx": "Root app component that renders the GamePage directly as the single-page game application.",
+  "frontend/src/hooks/useQueries.ts": "React Query hooks for fetching the high score from the backend and submitting a new score via mutation with cache invalidation.",
+  "frontend/src/hooks/useGameState.ts": "Custom hook managing all game logic including target spawning at random positions, target lifecycle/cleanup, score tracking, 30-second countdown timer, and game status transitions (idle/playing/gameover).",
+  "frontend/src/components/Target.tsx": "Individual tap target component rendered as a neon glowing circle with radial gradient, glow shadow, and burst animation on tap; uses inline style scaling to simulate shrink-over-time effect.",
+  "frontend/src/components/GameCanvas.tsx": "Main game play area component with HUD (score, timer, high score), ResizeObserver for dynamic area sizing, tap feedback burst animations, and background grid overlay.",
+  "frontend/src/components/GameOverScreen.tsx": "Game over screen displaying final score, high score, new-high-score trophy badge, and a neon-styled restart button.",
+  "frontend/src/components/StartScreen.tsx": "Splash/start screen with Tap Blitz logo, high score display, animated start button, and how-to-play instructions card.",
+  "frontend/src/pages/Game.tsx": "Main game page orchestrating all game states (idle/playing/gameover), integrating backend high score hooks, and handling score submission when the game ends.",
+  "frontend/src/index.css": "Global arcade-style CSS with Orbitron/Inter fonts, dark game background, neon color variables, HUD/card/button component styles, and keyframe animations for tap bursts and target effects.",
+  "frontend/tailwind.config.js": "Extended Tailwind config with Orbitron font family, neon color palette (cyan/magenta/yellow/purple/green), game background color, neon box shadows, and burst/score-pop keyframe animations."
+}

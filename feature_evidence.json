@@ -1,0 +1,70 @@
+{
+  "kind": "feature_evidence_report",
+  "features": [
+    {
+      "featureId": "feature-create-a-simple-tap-click-based-mobile-game-where-the-player-taps-appearing-targets-on-screen-to-score-points-targets-should-appear-at-random-positions-shrink-over-time-and-disappear-if-not-tapped-each-successful-tap-increments-the-score-the-game-runs-for-30-seconds-after-which-a-game-over-screen-shows-the-final-score-and-a-restart-button",
+      "featureTitle": "Create a simple tap/click-based mobile game where the player taps appearing targets on screen to score points. Targets should appear at random positions, shrink over time, and disappear if not tapped. Each successful tap increments the score. The game runs for 30 seconds, after which a game-over screen shows the final score and a restart button.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/GameCanvas.tsx",
+        "frontend/src/components/GameOverScreen.tsx",
+        "frontend/src/components/Target.tsx",
+        "frontend/src/hooks/useGameState.ts",
+        "frontend/src/pages/Game.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-1"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-store-and-display-the-player-s-all-time-high-score-on-the-backend-when-a-game-ends-if-the-final-score-exceeds-the-stored-high-score-update-it-display-the-current-high-score-on-both-the-main-game-screen-and-the-game-over-screen",
+      "featureTitle": "Store and display the player's all-time high score on the backend. When a game ends, if the final score exceeds the stored high score, update it. Display the current high score on both the main game screen and the game-over screen.",
+      "files": [
+        "frontend/src/components/GameCanvas.tsx",
+        "frontend/src/components/GameOverScreen.tsx",
+        "frontend/src/pages/Game.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-2"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-apply-a-vibrant-arcade-style-visual-theme-bold-neon-colors-on-a-dark-background-large-rounded-touch-targets-smooth-css-animations-for-target-appearance-and-shrinking-and-clear-score-timer-typography-the-design-must-feel-polished-and-playable-on-a-mobile-screen",
+      "featureTitle": "Apply a vibrant arcade-style visual theme: bold neon colors on a dark background, large rounded touch targets, smooth CSS animations for target appearance and shrinking, and clear score/timer typography. The design must feel polished and playable on a mobile screen.",
+      "files": [
+        "frontend/src/components/GameCanvas.tsx",
+        "frontend/src/components/GameOverScreen.tsx",
+        "frontend/src/components/Target.tsx",
+        "frontend/src/index.css",
+        "frontend/tailwind.config.js"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-3"
+      ],
+      "confidence": "high"
+    }
+  ]
+}

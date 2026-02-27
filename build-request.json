@@ -1,0 +1,86 @@
+{
+  "kind": "build_request",
+  "title": "Simple Mobile Game",
+  "projectName": "Tap Blitz",
+  "priority": "normal",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "text": "Create a simple tap/click-based mobile game where the player taps appearing targets on screen to score points. Targets should appear at random positions, shrink over time, and disappear if not tapped. Each successful tap increments the score. The game runs for 30 seconds, after which a game-over screen shows the final score and a restart button.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "Create a mobile game simple"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Targets (circles or similar shapes) appear at random positions on screen",
+        "Targets shrink and disappear if not tapped within ~2 seconds",
+        "Tapping a target increases the score by 1",
+        "A visible countdown timer starts at 30 seconds",
+        "When the timer reaches 0, a game-over screen displays the final score",
+        "A restart button resets the score, timer, and game state",
+        "Layout is optimized for mobile screen sizes (touch-friendly, portrait orientation)"
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "text": "Store and display the player's all-time high score on the backend. When a game ends, if the final score exceeds the stored high score, update it. Display the current high score on both the main game screen and the game-over screen.",
+      "target": "both",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "Create a mobile game simple"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Backend actor exposes a query to get the high score and an update to set a new high score",
+        "High score is persisted across page refreshes",
+        "High score is shown on the game HUD and on the game-over screen",
+        "High score updates automatically if the player beats it"
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "text": "Apply a vibrant arcade-style visual theme: bold neon colors on a dark background, large rounded touch targets, smooth CSS animations for target appearance and shrinking, and clear score/timer typography. The design must feel polished and playable on a mobile screen.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "Create a mobile game simple"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Dark background with neon accent colors used consistently throughout",
+        "Score and timer are prominently displayed and easy to read",
+        "Targets have smooth scale-down animations before disappearing",
+        "Tap feedback (e.g., burst or color flash) is visible on successful taps",
+        "UI looks clean and usable on screens 375px–430px wide"
+      ]
+    }
+  ],
+  "constraints": [
+    "Game logic must run entirely on the frontend; backend is only used for high score persistence",
+    "Do not use WebSockets or real-time features"
+  ],
+  "nonGoals": [
+    "Multiplayer or leaderboard with multiple users",
+    "User authentication or Internet Identity login",
+    "In-app purchases or monetization",
+    "Sound effects or audio",
+    "3D graphics"
+  ],
+  "imageRequirements": {
+    "required": [
+      "Colorful neon starburst or radial glow splash screen background illustration with dark background and vivid magenta, cyan, and yellow light rays (game-bg.dim_390x844.png)"
+    ],
+    "edits": []
+  }
+}
